@@ -1,19 +1,24 @@
 <template>
   <Layout>
     <h2>Latest Photos</h2>
+    <Pager class="pagination" :info="$page.allPhotos.pageInfo" :showLinks="true" />
     <ul>
       <li v-for="edge in $page.allPhotos.edges" :key="edge.node.id">
-          <img loading="lazy" :src="edge.node.img" />
-          <div class="date">{{ edge.node.title }}</div>
+          <g-image :src=edge.node.img></g-image>
+          <div class="date">SOL - {{ edge.node.sol }} - {{ edge.node.title }}</div>
       </li>
     </ul>
-
+    <Pager class="pagination" :info="$page.allPhotos.pageInfo" :showLinks="true" />
   </Layout>
 </template>
 
 <page-query>
-query allPhotos {
-  allPhotos: allPhoto {
+query allPhotos ($page: Int) {
+  allPhotos: allPhoto (perPage: 21, page: $page) @paginate {
+    pageInfo {
+      totalPages
+      currentPage
+    }
     edges {
       node {
         id
@@ -27,9 +32,14 @@ query allPhotos {
 </page-query>
 
 <script>
+import { Pager } from 'gridsome'
+
 export default {
   metaInfo: {
     title: 'Hello, world!'
+  },
+  components: {
+    Pager
   }
 }
 </script>
@@ -63,5 +73,25 @@ img {
     right: auto;
     font-style: italic;
     color: red;
+}
+
+.pagination {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.pagination a {
+  border: 1px solid salmon;
+  text-decoration: none;
+  padding: 0px 15px 5px;
+  margin: 0 5px;
+  color: salmon;
+}
+
+.pagination a.active {
+  background-color: salmon;
+  border: 1px solid salmon;
+  color: #fff;
 }
 </style>

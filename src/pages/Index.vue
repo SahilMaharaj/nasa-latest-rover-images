@@ -1,7 +1,9 @@
 <template>
   <Layout>
     <h2>Latest Photos</h2>
-    <Pager class="pagination" :info="$page.allPhotos.pageInfo" :showLinks="true" />
+   
+      <Pager class="pagination" :info="$page.allPhotos.pageInfo" :showLinks="true" />
+  
     <ul>
       <li v-for="edge in $page.allPhotos.edges" :key="edge.node.id">
           <g-image :src=edge.node.img></g-image>
@@ -98,6 +100,14 @@ img {
 @media only screen and (max-width: 600px) {
   ul {
     grid-template-columns: 1fr;
+  }
+
+  .pagination {
+    font-size: 16px;
+  }
+
+  .pagination a {
+    padding: 0 10px 3px;
   }
 }
 </style>

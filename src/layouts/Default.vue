@@ -18,6 +18,12 @@ query {
 </static-query>
 
 <style>
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   font-family: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
   margin:0;

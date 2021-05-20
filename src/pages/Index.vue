@@ -3,7 +3,7 @@
     <h2>Latest Photos</h2>
     <ul>
       <li v-for="edge in $page.allPhotos.edges" :key="edge.node.id">
-          <g-image :src="edge.node.img"></g-image>
+          <img loading="lazy" :src="edge.node.img" />
           <div class="date">{{ edge.node.title }}</div>
       </li>
     </ul>

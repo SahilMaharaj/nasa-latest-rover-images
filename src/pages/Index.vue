@@ -94,4 +94,10 @@ img {
   border: 1px solid salmon;
   color: #fff;
 }
+
+@media only screen and (max-width: 600px) {
+  ul {
+    grid-template-columns: 1fr;
+  }
+}
 </style>

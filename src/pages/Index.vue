@@ -6,7 +6,7 @@
   
     <ul>
       <li v-for="edge in $page.allPhotos.edges" :key="edge.node.id">
-          <g-image :src=edge.node.img></g-image>
+          <g-image :src="edge.node.img"></g-image>
           <div class="date">SOL - {{ edge.node.sol }} - {{ edge.node.title }}</div>
       </li>
     </ul>

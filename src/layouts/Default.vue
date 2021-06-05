@@ -2,7 +2,9 @@
   <div class="layout">
     <header class="header">
       <strong>
-        <h1><g-link to="/">{{ $static.metadata.siteName }}</g-link></h1>
+        <g-link to="/">
+          <g-image width="80" height="80" class="logo" src="~/assets/images/nasa-logo.png"></g-image>       
+        </g-link>
       </strong>
     </header>
     <slot/>
@@ -53,5 +55,10 @@ body {
 
 .nav__link {
   margin-left: 20px;
+}
+
+.logo {
+  max-width: 100%;
+  display: block;
 }
 </style>

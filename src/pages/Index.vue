@@ -1,6 +1,6 @@
 <template>
   <Layout>
-    <h2>Latest Photos</h2>
+    <h1 class="heading">Mars Rover Latest Photos</h1>
    
       <Pager class="pagination" :info="$page.allPhotos.pageInfo" :showLinks="true" />
   
@@ -38,7 +38,8 @@ import { Pager } from 'gridsome'
 
 export default {
   metaInfo: {
-    title: 'Hello, world!'
+    title: 'Mars Rover Photos',
+    titleTemplate: '%s | By Sahil Maharaj'
   },
   components: {
     Pager
@@ -47,6 +48,11 @@ export default {
 </script>
 
 <style>
+.heading {
+  color: #fc3e22;
+  font-family: 'Roboto', sans-serif;
+}
+
 ul {
   margin: 0;
   padding: 0;
@@ -74,7 +80,8 @@ img {
     bottom: auto;
     right: auto;
     font-style: italic;
-    color: red;
+    color: #fc3e22;
+    font-weight: bold;
 }
 
 .pagination {
@@ -84,20 +91,30 @@ img {
 }
 
 .pagination a {
-  border: 1px solid salmon;
+  border: 1px solid #0b3d91;
   text-decoration: none;
   padding: 0px 15px 5px;
   margin: 0 5px;
-  color: salmon;
+  color: #0b3d91;
 }
 
 .pagination a.active {
-  background-color: salmon;
-  border: 1px solid salmon;
+  background-color: #0b3d91;
+  border: 1px solid #0b3d91;
   color: #fff;
 }
 
 @media only screen and (max-width: 600px) {
+  .header {
+    justify-content: center;
+  }
+  
+  .heading {
+    text-align: center;
+    font-size: 24px;
+    line-height: 26px;
+  }
+  
   ul {
     grid-template-columns: 1fr;
   }

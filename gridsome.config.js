@@ -6,5 +6,25 @@
 
 module.exports = {
   siteName: 'Nasa Mars Rover',
-  plugins: []
+  plugins: [
+    {
+      use: 'gridsome-source-cloudinary',
+      options: {
+        cloudName: process.env.CLOUDNAME,
+        apiKey: process.env.API_KEY,
+        apiSecret: process.env.API_SECRET,
+        resourceOptions: {
+          type: "upload",
+          prefix: 'testing',
+          max_results: 200
+        },
+        // transformations: {
+        //   width: 200,
+        //   height: 200,
+        //   gravity: 'auto:subject',
+        //   crop: 'fill',
+        // }
+      },
+    },
+  ]
 }

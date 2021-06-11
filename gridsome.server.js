@@ -11,7 +11,7 @@ module.exports = function (api) {
         id: photo.id,
         sol: photo.sol,
         title: photo.earth_date,
-        img: photo.img_src
+        img: 'https://res.cloudinary.com/sahilm/image/fetch/q_auto/f_auto/c_scale,w_auto/dpr_auto/' + photo.img_src
       })
     }
   })

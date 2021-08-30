@@ -1,10 +1,7 @@
 <template>
   <Layout>
-    <h1 class="heading">Mars Rover Latest Photos</h1>
-
-        
-      <Pager class="pagination" :info="$page.allPhotos.pageInfo" :showLinks="true" />
-  
+    <h1 class="heading">Mars Rover Latest Photos</h1>        
+      <Pager class="pagination" :info="$page.allPhotos.pageInfo" :showLinks="true" />  
     <ul>
       <li v-for="edge in $page.allPhotos.edges" :key="edge.node.id">
           <g-image :src="edge.node.img"></g-image>
@@ -44,19 +41,6 @@ export default {
   },
   components: {
     Pager
-  },
-  data() {
-    return {
-      images: [],
-      mars: '',
-    }
-  },
-  async asyncData(context) {
-    const mars = await fetch('https://mars.nasa.gov/msl-raw-images/proj/msl/redops/ods/surface/sol/03144/opgs/edr/ncam/NRB_676595786EDR_S0882130NCAM00567M_.JPG').then((res) => res.json());
-    
-    return {
-      mars: context.$cloudinary.image.fetchRemote(mars.image)
-    }
   }
 }
 </script>

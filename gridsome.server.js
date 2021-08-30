@@ -2,7 +2,7 @@ const axios = require('axios')
 
 module.exports = function (api) {
   api.loadSource(async actions => {
-    const { data } = await axios.get('https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/latest_photos?api_key=XqOVVfoPOpyWD30GV1EFu35cSPHReMszhgZf57L5')
+    const { data } = await axios.get(`https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/latest_photos?api_key=${process.env.NASA_KEY}`)
 
      const collection = actions.addCollection('Photo')
 

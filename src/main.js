@@ -3,6 +3,9 @@
 
 import DefaultLayout from '~/layouts/Default.vue'
 import VModal from 'vue-js-modal'
+import VModal from 'vue-js-modal/dist/ssr.nocss'
+
+import 'vue-js-modal/dist/styles.css'
 
 export default function (Vue, { router, head, isClient }) {
   // Set default layout as a global component

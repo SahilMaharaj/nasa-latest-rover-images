@@ -18,13 +18,10 @@ module.exports = {
           prefix: 'testing',
           max_results: 200
         },
-        // transformations: {
-        //   width: 200,
-        //   height: 200,
-        //   gravity: 'auto:subject',
-        //   crop: 'fill',
-        // }
       },
     },
+    {
+      use: 'gridsome-plugin-modal'
+    }
   ]
 }

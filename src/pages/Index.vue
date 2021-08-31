@@ -12,6 +12,7 @@
             <modal name="example" 
                   :adaptive="true" 
                   :clickToClose="false"
+                  :focusTrap="true"
                   :max-width="1000"
                   width="100%"
                   height="auto">

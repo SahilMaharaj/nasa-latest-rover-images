@@ -142,6 +142,7 @@ img {
 }
 
 .thumbnail-img {
+  display: block;
   cursor: pointer;
 }
 
